@@ -1,0 +1,26 @@
+namespace: contact-manager
+
+frontend:
+  replicaCount: 1
+  image:
+    repository: shivank79/mern-contact-manager-project-frontend
+    tag: v1
+    pullPolicy: IfNotPresent
+  containerPort: 5173
+  env:
+    VITE_API_URL: http://backend:5000
+
+backend:
+  replicaCount: 1
+  image:
+    repository: shivank79/mern-contact-manager-project-backend
+    tag: v1
+    pullPolicy: IfNotPresent
+  containerPort: 5000
+  env:
+    MONGO_URI: "mongodb+srv://Shivank79_db_user:k.bQ39B88@cluster0.s5r9fje.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    CLIENT_URL: http://contacts.local
+
+secret:
+  name: api-secrets
+  jwt: your_jwt_secret_here
