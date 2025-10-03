@@ -4,11 +4,15 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  server: { 
-    port: 5173 
+  server: {
+    host: true, // or '0.0.0.0' to listen on all addresses
+    // port: 5173, // your port
+    allowedHosts: 'all', // allow all hosts
   },
-  preview: { 
-    port: 5173 
+  preview: {
+     host: true,
+     allowedHosts: 'all', // allow all hosts
+    // port: 5173 
   },
   test: {
     environment: 'jsdom',   // 👈 Enables document/window for React Testing Library
