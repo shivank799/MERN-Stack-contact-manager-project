@@ -53,12 +53,22 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
           logout: true
        
-      - name: Build and Push Docker Image
-        run: |
-          IMAGE=shivank79/${{ matrix.service }}:${{ github.sha }}
-          docker build -t $IMAGE ./${{ matrix.service }}
-          docker push $IMAGE
-          echo "$IMAGE" >> $GITHUB_STEP_SUMMARY
+      - name: Build and Push action for frontend
+        uses: docker/build-push-action@v6
+        with:
+          context: ./frontend
+          file: ./frontend/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/contact-manager-frontend:${{github.run_id}}
+
+      - name: Build and Push action for backend
+        uses: docker/build-push-action@v6
+        with:
+          context: ./backend
+          file: ./backend/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/contact-manager-backend:${{github.run_id}}
+
 
   update-newtag-in-helm-chart:
     runs-on: ubuntu-latest
