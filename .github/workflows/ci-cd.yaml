@@ -79,6 +79,6 @@ jobs:
         run: |
           git config --global user.name "shivank kumar"
           git config --global user.email "kumarshivank799@gmail.com"
-          git add Helm/contact-manager/values.yaml
+          git add helm/contact-manager-chart/values.yaml
           git commit -m "Update image tag to ${{ github.sha }} in Helm chart" || echo "No changes to commit"
           git push origin main
