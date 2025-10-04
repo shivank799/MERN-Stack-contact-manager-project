@@ -4,7 +4,7 @@ frontend:
   replicaCount: 1
   image:
     repository: shivank79/mern-contact-manager-project-frontend
-    tag: "cc4b762c77e8b119d25ba0332ebab6c130972d79"
+    tag: "d5cc7750f5042ac09325cf8971dc137f1631b871"
     pullPolicy: IfNotPresent
   containerPort: 5173
   env:
@@ -14,7 +14,7 @@ backend:
   replicaCount: 1
   image:
     repository: shivank79/mern-contact-manager-project-backend
-    tag: "cc4b762c77e8b119d25ba0332ebab6c130972d79"
+    tag: "d5cc7750f5042ac09325cf8971dc137f1631b871"
     pullPolicy: IfNotPresent
   containerPort: 5000
   env:
