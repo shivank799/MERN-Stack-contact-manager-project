@@ -1,0 +1,23 @@
+# Default values for contact-manager Helm chart
+
+replicaCount: 1
+
+frontend:
+  image:
+    repository: shivank79/mern-contact-manager-project-frontend
+    tag: v1
+
+backend:
+  image:
+    repository: shivank79/mern-contact-manager-project-backend
+    tag: v1
+
+ingress:
+  enabled: false
+  className: nginx
+  annotations: {}
+  hosts:
+    - host: contacts.local
+      paths:
+        - path: /
+          pathType: Prefix

@@ -1,5 +1,0 @@
-apiVersion: v2
-name: contact-manager
-description: A Helm chart for MERN Contact Manager app
-version: 0.1.0
-appVersion: "v1"

@@ -72,7 +72,7 @@ jobs:
       - name: Update tag in Helm chart
         run: |
           for service in frontend backend; do
-            sed -i "s/tag: .*/tag: \"${{ github.sha }}\"/" Helm/contact-manager/values.yaml
+            sed -i "s/tag: .*/tag: \"${{ github.sha }}\"/" helm/contact-manager-chart/values.yaml
           done
        
       - name: Commit and Push changes
