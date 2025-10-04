@@ -1,7 +1,10 @@
+// jest.config.js
 export default {
-  testEnvironment: "node",
-  transform: {},                       // disable babel transform
-  extensionsToTreatAsEsm: [".js"],     // tell Jest .js files are ESM
-  moduleFileExtensions: ["js", "json"],
-  verbose: true
+  testEnvironment: "node",               
+  extensionsToTreatAsEsm: [".js"],       
+  moduleDirectories: ["node_modules", "src"], 
+  transform: {},                          
+  testTimeout: 10000,                    
+  setupFilesAfterEnv: [],                
+  verbose: true                           
 };
