@@ -5,12 +5,12 @@ replicaCount: 1
 frontend:
   image:
     repository: shivank79/mern-contact-manager-project-frontend
-    tag: "18270272962"
+    tag: "18270291000"
 
 backend:
   image:
     repository: shivank79/mern-contact-manager-project-backend
-    tag: "18270272962"
+    tag: "18270291000"
 
 ingress:
   enabled: false
